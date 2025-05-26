@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//trebuie sa folositi fisierul masini.txt
-//sau va creati un alt fisier cu alte date
 
 struct StructuraMasina {
 	int id;
@@ -16,7 +14,6 @@ struct StructuraMasina {
 };
 typedef struct StructuraMasina Masina;
 
-//creare structura pentru un nod dintr-un arbore binar de cautare
 struct Nod {
 	Masina info;
 	struct Nod* st;
@@ -80,9 +77,7 @@ void adaugaMasinaInArbore(Nod** arbore, Masina masinaNoua) {
 }
 
 Nod* citireArboreDeMasiniDinFisier(const char* numeFisier) {
-	//functia primeste numele fisierului, il deschide si citeste toate masinile din fisier
-	//prin apelul repetat al functiei citireMasinaDinFisier()
-	//ATENTIE - la final inchidem fisierul/stream-ul
+
 	FILE* f = fopen(numeFisier, "r");
 	Nod* arbore = NULL;
 	while (!feof(f))
@@ -95,11 +90,7 @@ Nod* citireArboreDeMasiniDinFisier(const char* numeFisier) {
 }
 
 void afisareMasiniDinArbore() {
-	//afiseaza toate elemente de tip masina din arborele creat
-	//prin apelarea functiei afisareMasina()
-	//parcurgerea arborelui poate fi realizata in TREI moduri
-	//folositi toate cele TREI moduri de parcurgere
-
+	
 }
 
 void afisareInOrdine(Nod* arbore)
@@ -152,7 +143,7 @@ void dezalocareArboreDeMasini(Nod** arbore) {
 
 
 }
-//radacina=6, id=8
+
 Masina getMasinaByID(Nod* arbore,int id) {
 	Masina m;
 	m.id = -1;
@@ -174,19 +165,18 @@ Masina getMasinaByID(Nod* arbore,int id) {
 	return m;
 }
 
-int determinaNumarNoduri(/*arborele de masini*/) {
-	//calculeaza numarul total de noduri din arborele binar de cautare
+int determinaNumarNoduri() {
+
 	return 0;
 }
 
-int calculeazaInaltimeArbore(/*arbore de masini*/) {
-	//calculeaza inaltimea arborelui care este data de 
-	//lungimea maxima de la radacina pana la cel mai indepartat nod frunza
+int calculeazaInaltimeArbore() {
+
 	return 0;
 }
 
 float calculeazaPretTotal(Nod*arbore) {
-	//calculeaza pretul tuturor masinilor din arbore.
+
 	if (arbore == NULL) {
 		return 0;
 	}
@@ -195,8 +185,7 @@ float calculeazaPretTotal(Nod*arbore) {
 	return arbore->info.pret + totalStanga + totalDreapta;
 }
 
-float calculeazaPretulMasinilorUnuiSofer(/*arbore de masini*/ const char* numeSofer) {
-	//calculeaza pretul tuturor masinilor unui sofer.
+float calculeazaPretulMasinilorUnuiSofer(const char* numeSofer) {
 	return 0;
 }
 
