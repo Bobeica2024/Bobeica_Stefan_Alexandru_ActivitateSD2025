@@ -14,8 +14,6 @@ struct StructuraMasina {
 };
 typedef struct StructuraMasina Masina;
 
-//creare structura pentru Heap
-//un vector de elemente, lungimea vectorului si numarul de elemente din vector
 struct Heap {
 	Masina* vector;
 	int nrMasini;
@@ -144,8 +142,7 @@ Masina extrageMasina(Heap* heap) {
 	return m;
 }
 
-//o lista cu masinile din heap care au id-ul > ca un id parametru
-//masinile vor fi extrase din heap
+
 
 struct Nod
 {
@@ -207,14 +204,7 @@ int main() {
 	printf("Elementele sunt : \n");
 	afisareHeap(h);
 
-	//Masina m = extrageMasina(&h);
-	//printf("\nPrima masina extrasa: \n");
-	//afisareMasina(m);
-	//extrageMasina(&h);
-	//extrageMasina(&h);
-	//extrageMasina(&h);
-	//extrageMasina(&h);
-
+	
 	Nod* lista = masiniCuIDMare(&h, 4);
 	printf("\nLISTA:\n");
 	afisareLista(lista);
